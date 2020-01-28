@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyIntroShop2._2.Main.Interfaces
 {
-    interface IAllPhones
+    public interface IAllPhones
     {
         IEnumerable<Phone> phones { get; }
     }
