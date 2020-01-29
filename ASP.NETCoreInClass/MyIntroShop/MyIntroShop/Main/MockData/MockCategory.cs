@@ -17,7 +17,7 @@ namespace MyIntroShop.Main.MockData
                 {
                     new Category {categoryName = "Games", categoryDescription = "Video card for games"},
                     new Category {categoryName = "Disigner", categoryDescription = "Video card for 3d"}
-                }
+                };
             }
         }
     }

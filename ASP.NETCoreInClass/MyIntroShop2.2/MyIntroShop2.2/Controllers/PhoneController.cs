@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MyIntroShop2._2.Controllers 
 {
@@ -24,7 +24,7 @@ namespace MyIntroShop2._2.Controllers
             ViewBag.Title = "Phone";
             PhoneListViewModel obj = new PhoneListViewModel();
             obj.allPhones = _allPhones.phones;
-            obj.currentCategory = "Best category";
+            obj.currentCategory = "Phone: ";
 
             return View(obj);
         }
