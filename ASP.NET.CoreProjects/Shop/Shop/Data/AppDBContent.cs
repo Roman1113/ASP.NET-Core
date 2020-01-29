@@ -1,5 +1,6 @@
 ﻿using FirstProjectASP.NET.Core.Shop.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using Shop.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace Shop.Data
         }
         public DbSet<Car> Car { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<ShopCartItem> ShopCarItems { get; set; }
 
     }
 }
