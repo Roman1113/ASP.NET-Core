@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MyIntroShop2._2.Main.Interfaces
 {
-    public interface IPhoneCategory
+    public interface IAllVideoCards
     {
-        IEnumerable<PhoneCategory> AllPhoneCategories { get; }
+        IEnumerable<VideoCard> videoCards { get; }
     }
 }

@@ -8,20 +8,20 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyIntroShop2._2.Controllers 
 {
-    //public class PhoneController : Controller
+    //public class MotherboardController : Controller
     //{
-    //    private readonly IAllPhones _allPhones;
-    //    private readonly IPhoneCategory _allCategories;
+    //    private readonly IAllMotherboards _allMotherboards;
+    //    private readonly IMotherboardsCategory _allMotherboardCategories;
 
-    //    public PhoneController(IAllPhones iallPhones, IPhoneCategory iphoneCategory)
+    //    public MotherboardController(IAllMotherboards iallMotherboards, IMotherboardsCategory imotherboardCategory)
     //    {
-    //        _allPhones = iallPhones;
-    //        _allCategories = iphoneCategory;
+    //        _allMotherboards = iallMotherboards;
+    //        _allMotherboardCategories = imotherboardCategory;
     //    }
 
     //    public ViewResult List()
     //    {
-    //        ViewBag.Title = "Phone";
+    //        ViewBag.Title = "Motherboard";
     //        PhoneListViewModel obj = new PhoneListViewModel();
     //        obj.allPhones = _allPhones.phones;
     //        obj.currentCategory = "Phone: ";

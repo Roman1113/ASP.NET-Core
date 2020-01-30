@@ -9,14 +9,14 @@ namespace MyIntroShop2._2.Main.MockData
 {
     public class MockCategory : IPhoneCategory
     {
-        public IEnumerable<Category> AllCategories
+        public IEnumerable<PhoneCategory> AllPhoneCategories
         {
              get
              {
-                return new List<Category>
+                return new List<PhoneCategory>
                 {
-                    new Category {categoryName = "Flagman", categoryDescription = "Phone with low path"},
-                    new Category {categoryName = "Budget", categoryDescription = "Phone with hight path"}
+                    new PhoneCategory {categoryName = "Flagman", categoryDescription = "Phone with low path"},
+                    new PhoneCategory {categoryName = "Budget", categoryDescription = "Phone with hight path"}
                 };
              }
         }  
