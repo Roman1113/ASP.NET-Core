@@ -10,7 +10,7 @@ namespace MyIntroShop2._2.Main.MockData
     public class MockMotherboards : IAllMotherboards
     {
 
-        private readonly IMotherboardsCategory _motherboardsCategory = new AllMotherboardCategories();
+        private readonly IMotherboardsCategory _motherboardsCategory = new MockMotherboardCategory();
      
         public IEnumerable<Motherboard> motherboards
         {

@@ -25,6 +25,16 @@ namespace MyIntroShop2._2
         {
             services.AddTransient<IAllPhones, MockPhones>();
             services.AddTransient<IPhoneCategory, MockCategory>();
+            services.AddTransient<IAllRam, MockRam>();
+            services.AddTransient<IRamCategory, MockRamCategory>();
+            services.AddTransient<IAllSsd, MockSsd>();
+            services.AddTransient<ISsdCategory, MockSsdCategory>();
+            services.AddTransient<IAllSsd, MockSsd>();
+            services.AddTransient<IProcesorCategory, MockProcesorCategory>();
+            services.AddTransient<IAllProcesors, MockProcesor>();
+            services.AddTransient<IMotherboardsCategory, MockMotherboardCategory>();
+            services.AddTransient<IAllVideoCards, MockVideoCard>();
+            services.AddTransient<IVideoCardCategory, MockVideoCardCategory>();
             services.AddMvc();
         }
 

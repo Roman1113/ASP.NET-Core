@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyIntroShop2._2.Main.MockData
 {
-    public class AllMotherboardCategories : IMotherboardsCategory
+    public class MockMotherboardCategory : IMotherboardsCategory
     {
         public IEnumerable<MotherboardCategory> AllMotherboardsCategories
         {
