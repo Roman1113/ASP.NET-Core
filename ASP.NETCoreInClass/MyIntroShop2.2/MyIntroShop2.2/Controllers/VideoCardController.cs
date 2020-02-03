@@ -8,25 +8,25 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyIntroShop2._2.Controllers 
 {
-    //public class PhoneController : Controller
-    //{
-    //    private readonly IAllPhones _allPhones;
-    //    private readonly IPhoneCategory _allCategories;
+    public class VideoCardController : Controller
+    {
+        private readonly IAllVideoCards _allVideoCard;
+        private readonly IVideoCardCategory _allVideoCardCategories;
 
-    //    public PhoneController(IAllPhones iallPhones, IPhoneCategory iphoneCategory)
-    //    {
-    //        _allPhones = iallPhones;
-    //        _allCategories = iphoneCategory;
-    //    }
+        public VideoCardController(IAllVideoCards iallVideoCard, IVideoCardCategory iVideoCardCategory)
+        {
+            _allVideoCard = iallVideoCard;
+            _allVideoCardCategories = iVideoCardCategory;
+        }
 
-    //    public ViewResult List()
-    //    {
-    //        ViewBag.Title = "Phone";
-    //        PhoneListViewModel obj = new PhoneListViewModel();
-    //        obj.allPhones = _allPhones.phones;
-    //        obj.currentCategory = "Phone: ";
+        public ViewResult List()
+        {
+            ViewBag.Title = "VideoCard";
+            VideoCardListViewModel obj = new VideoCardListViewModel();
+            obj.allVideoCards = _allVideoCard.videoCards;
+            obj.currentCategory = "VideoCard: ";
 
-    //        return View(obj);
-    //    }
-    //}
+            return View(obj);
+        }
+    }
 }

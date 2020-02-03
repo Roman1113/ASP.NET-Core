@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyIntroShop2._2.Main.Interfaces
 {
-    interface IMotherboardsCategory
+    public interface IMotherboardsCategory
     {
         IEnumerable<MotherboardCategory> AllMotherboardsCategories { get; }
     }

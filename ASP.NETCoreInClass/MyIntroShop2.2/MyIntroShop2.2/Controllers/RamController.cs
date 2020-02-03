@@ -8,25 +8,25 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyIntroShop2._2.Controllers 
 {
-    //public class PhoneController : Controller
-    //{
-    //    private readonly IAllPhones _allPhones;
-    //    private readonly IPhoneCategory _allCategories;
+    public class RamController : Controller
+    {
+        private readonly IAllRam _allRam;
+        private readonly IRamCategory _allRamCategories;
 
-    //    public PhoneController(IAllPhones iallPhones, IPhoneCategory iphoneCategory)
-    //    {
-    //        _allPhones = iallPhones;
-    //        _allCategories = iphoneCategory;
-    //    }
+        public RamController(IAllRam iallRam, IRamCategory iRamCategory)
+        {
+            _allRam = iallRam;
+            _allRamCategories = iRamCategory;
+        }
 
-    //    public ViewResult List()
-    //    {
-    //        ViewBag.Title = "Phone";
-    //        PhoneListViewModel obj = new PhoneListViewModel();
-    //        obj.allPhones = _allPhones.phones;
-    //        obj.currentCategory = "Phone: ";
+        public ViewResult List()
+        {
+            ViewBag.Title = "Ram";
+            RamListViewModel obj = new RamListViewModel();
+            obj.allRams = _allRam.rams;
+            obj.currentCategory = "Ram: ";
 
-    //        return View(obj);
-    //    }
-    //}
+            return View(obj);
+        }
+    }
 }

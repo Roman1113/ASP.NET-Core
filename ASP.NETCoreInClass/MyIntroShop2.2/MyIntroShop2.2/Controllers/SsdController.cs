@@ -8,25 +8,25 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyIntroShop2._2.Controllers 
 {
-    //public class PhoneController : Controller
-    //{
-    //    private readonly IAllPhones _allPhones;
-    //    private readonly IPhoneCategory _allCategories;
+    public class SsdController : Controller
+    {
+        private readonly IAllSsd _allSsd;
+        private readonly ISsdCategory _allSsdCategories;
 
-    //    public PhoneController(IAllPhones iallPhones, IPhoneCategory iphoneCategory)
-    //    {
-    //        _allPhones = iallPhones;
-    //        _allCategories = iphoneCategory;
-    //    }
+        public SsdController(IAllSsd iallSsd, ISsdCategory iSsdCategory)
+        {
+            _allSsd = iallSsd;
+            _allSsdCategories = iSsdCategory;
+        }
 
-    //    public ViewResult List()
-    //    {
-    //        ViewBag.Title = "Phone";
-    //        PhoneListViewModel obj = new PhoneListViewModel();
-    //        obj.allPhones = _allPhones.phones;
-    //        obj.currentCategory = "Phone: ";
+        public ViewResult List()
+        {
+            ViewBag.Title = "Ssd";
+            SsdListViewModel obj = new SsdListViewModel();
+            obj.allSsds = _allSsd.ssds;
+            obj.currentCategory = "Ssd : ";
 
-    //        return View(obj);
-    //    }
-    //}
+            return View(obj);
+        }
+    }
 }

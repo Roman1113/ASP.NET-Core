@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyIntroShop2._2.Main.Interfaces
 {
-    interface IAllProcesors
+    public interface IAllProcesors
     {
         IEnumerable<Procesor> procesors { get; }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyIntroShop2._2.Main.Interfaces
 {
-    interface IAllMotherboards
+    public interface IAllMotherboards
     {
         IEnumerable<Motherboard> motherboards { get; }
     }
