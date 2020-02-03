@@ -15,8 +15,8 @@ namespace MyIntroShop2._2.Main.MockData
              {
                 return new List<ProcesorCategory>
                 {
-                    new ProcesorCategory {categoryName = "Flagman", categoryDescription = "Phone with low path"},
-                    new ProcesorCategory {categoryName = "Budget", categoryDescription = "Phone with hight path"}
+                    new ProcesorCategory {categoryName = "Flagman", categoryDescription = "Procesor with low path"},
+                    new ProcesorCategory {categoryName = "Budget", categoryDescription = "Procesor with hight path"}
                 };
              }
         }  

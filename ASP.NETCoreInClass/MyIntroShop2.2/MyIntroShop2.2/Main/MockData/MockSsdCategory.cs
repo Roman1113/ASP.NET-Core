@@ -15,8 +15,8 @@ namespace MyIntroShop2._2.Main.MockData
              {
                 return new List<SsdCategory>
                 {
-                    new SsdCategory {categoryName = "Flagman", categoryDescription = "Phone with low path"},
-                    new SsdCategory {categoryName = "Budget", categoryDescription = "Phone with hight path"}
+                    new SsdCategory {categoryName = "Flagman", categoryDescription = "Ssd with low path"},
+                    new SsdCategory {categoryName = "Budget", categoryDescription = "Ssd with hight path"}
                 };
              }
         }  

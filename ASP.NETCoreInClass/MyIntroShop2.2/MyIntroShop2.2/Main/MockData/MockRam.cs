@@ -19,34 +19,34 @@ namespace MyIntroShop2._2.Main.MockData
                 {
                     new Ram
                     {
-                        name = "Samsung S10",
-                        description = "Best phone by sumsung",
-                        img = "https://i2.rozetka.ua/goods/11052630/samsung_galaxy_s10_plus_6_128_gb_black_sm_g975fzkdsek_images_11052630657.jpg",
-                        price = 23000,
+                        name = "Оперативна пам'ять HyperX DDR4-2666",
+                        description = "Оперативна пам'ять HyperX DDR4-2666 16384MB PC4-21300 (Kit of 2x8192) Fury Black (HX426C16FB3K2/16)",
+                        img = "https://i1.rozetka.ua/goods/13589923/hyperx_hx426c16fb3k2_16_images_13589923273.jpg",
+                        price = 2045,
                         RamCategory = _ramCategory.AllRamsCategories.First()
                     },
                     new Ram
                     {
-                        name = "Nokia 3310",
-                        description = "Old phone",
-                        img = "https://static.turbosquid.com/Preview/001329/666/6L/_DHQ.jpg",
-                        price = 700,
+                        name = "Оперативна пам'ять Kingston DDR3",
+                        description = "Оперативна пам'ять Kingston DDR3-1333 4096MB PC3-10600 (KVR13N9S8/4)",
+                        img = "https://i1.rozetka.ua/goods/6975/kingston_kvr13n9s8_4_images_6975524.jpg",
+                        price = 565,
                         RamCategory = _ramCategory.AllRamsCategories.Last()
                     },
                     new Ram
                     {
-                        name = "Lenovo z-5",
-                        description = "Best phone by Lenovo",
-                        img = "https://i.allo.ua/media/catalog/product/cache/1/image/425x295/799896e5c6c37e11608b9f8e1d047d15/f/i/file_613_3.jpg",
-                        price = 3900,
+                        name = "Оперативна пам'ять HyperX DDR4",
+                        description = "Оперативна пам'ять HyperX DDR4-2666 8192MB PC4-21300 (Kit of 2x4096) Fury Black (HX426C16FB3K2/8)",
+                        img = "https://i2.rozetka.ua/goods/13589923/hyperx_hx426c16fb3k2_8_images_13589923975.jpg",
+                        price = 1432,
                         RamCategory = _ramCategory.AllRamsCategories.First()
                     },
                     new Ram
                     {
-                        name = "Xiaomi Redmy 8",
-                        description = "Best phone by Xiaomi",
-                        img = "https://i8.rozetka.ua/goods/14142417/xiaomi_redmi_note_8_pro_6_128_black_images_14142417355.jpg",
-                        price = 6999,
+                        name = "Оперативна пам'ять Crucial DDR4",
+                        description = "Оперативна пам'ять Crucial DDR4-3000 16384MB PC4-24000 (Kit of 2x8192) Ballistix Sport LT Red (BLS2K8G4D30AESEK)",
+                        img = "https://i1.rozetka.ua/goods/13436152/copy_crucial_bls2k4g4d240fse_5d54f434827d2_images_13436152106.jpg",
+                        price = 2099,
                         RamCategory = _ramCategory.AllRamsCategories.First()
                     }
                 };

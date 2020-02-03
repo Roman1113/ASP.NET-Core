@@ -20,34 +20,34 @@ namespace MyIntroShop2._2.Main.MockData
                 {
                     new Motherboard
                     {
-                        name = "Samsung S10",
-                        description = "Best phone by sumsung",
-                        img = "https://i2.rozetka.ua/goods/11052630/samsung_galaxy_s10_plus_6_128_gb_black_sm_g975fzkdsek_images_11052630657.jpg",
-                        price = 23000,
+                        name = "Asus Prime B360-Plus",
+                        description = "Материнська плата Asus Prime B360-Plus (s1151, Intel B360, PCI-Ex16)",
+                        img = "https://i1.rozetka.ua/goods/10437607/asus_prime_b360_plus_images_10437607238.jpg",
+                        price = 2619,
                         MotherboardCategory = _motherboardsCategory.AllMotherboardsCategories.First()
                     },
                     new Motherboard
                     {
-                        name = "Nokia 3310",
-                        description = "Old phone",
-                        img = "https://static.turbosquid.com/Preview/001329/666/6L/_DHQ.jpg",
-                        price = 700,
+                        name = "Материнська плата Asus ROG Strix X570-I Gaming",
+                        description = "Материнська плата Asus ROG Strix X570-I Gaming (sAM4, AMD X570, PCI-Ex16)",
+                        img = "https://i1.rozetka.ua/goods/14526857/asus_rog_strix_x570I_gaming_images_14526857356.jpg",
+                        price = 7567,
                         MotherboardCategory = _motherboardsCategory.AllMotherboardsCategories.Last()
                     },
                     new Motherboard
                     {
-                        name = "Lenovo z-5",
-                        description = "Best phone by Lenovo",
-                        img = "https://i.allo.ua/media/catalog/product/cache/1/image/425x295/799896e5c6c37e11608b9f8e1d047d15/f/i/file_613_3.jpg",
-                        price = 3900,
+                        name = "Материнська плата MSI MEG X570 Ace",
+                        description = "Материнська плата MSI MEG X570 Ace (sAM4, AMD X570, PCI-Ex16)",
+                        img = "https://i2.rozetka.ua/goods/12766274/msi_meg_x570_ace_images_12766274461.jpg",
+                        price = 11215,
                         MotherboardCategory = _motherboardsCategory.AllMotherboardsCategories.First()
                     },
                     new Motherboard
                     {
-                        name = "Xiaomi Redmy 8",
-                        description = "Best phone by Xiaomi",
-                        img = "https://i8.rozetka.ua/goods/14142417/xiaomi_redmi_note_8_pro_6_128_black_images_14142417355.jpg",
-                        price = 6999,
+                        name = "Материнська плата Asus ROG Strix X570-F Gaming ",
+                        description = "Материнська плата Asus ROG Strix X570-F Gaming (sAM4, AMD X570, PCI-Ex16)",
+                        img = "https://i2.rozetka.ua/goods/12799704/asus_rog_strix_x570f_gaming_images_12799704289.jpg",
+                        price = 8013,
                         MotherboardCategory = _motherboardsCategory.AllMotherboardsCategories.First()
                     }
                 };

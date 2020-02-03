@@ -15,8 +15,8 @@ namespace MyIntroShop2._2.Main.MockData
              {
                 return new List<RamCategory>
                 {
-                    new RamCategory {categoryName = "Flagman", categoryDescription = "Phone with low path"},
-                    new RamCategory {categoryName = "Budget", categoryDescription = "Phone with hight path"}
+                    new RamCategory {categoryName = "Flagman", categoryDescription = "Ram with low path"},
+                    new RamCategory {categoryName = "Budget", categoryDescription = "Ram with hight path"}
                 };
              }
         }  

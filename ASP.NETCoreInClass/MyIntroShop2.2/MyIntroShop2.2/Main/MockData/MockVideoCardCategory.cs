@@ -15,8 +15,8 @@ namespace MyIntroShop2._2.Main.MockData
              {
                 return new List<VideoCardCategory>
                 {
-                    new VideoCardCategory {categoryName = "Flagman", categoryDescription = "Phone with low path"},
-                    new VideoCardCategory {categoryName = "Budget", categoryDescription = "Phone with hight path"}
+                    new VideoCardCategory {categoryName = "Flagman", categoryDescription = "Video Card with low path"},
+                    new VideoCardCategory {categoryName = "Budget", categoryDescription = "Video Card with hight path"}
                 };
              }
         }  
