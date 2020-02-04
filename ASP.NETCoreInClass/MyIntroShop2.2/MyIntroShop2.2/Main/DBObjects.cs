@@ -179,6 +179,48 @@ namespace MyIntroShop2._2.Main
                 );
             }
 
+            if (!content.SsdCategories.Any())
+            {
+                content.SsdCategories.AddRange(SsdCategories.Select(c => c.Value));
+            }
+            if (!content.Ssds.Any())
+            {
+                content.AddRange(
+                    new Ssd
+                    {
+                        name = "Kingston SSD HyperX Fury 3D 240GB",
+                        description = "Kingston SSD HyperX Fury 3D 120GB 2.5 SATAIII TLC (KC–S44120–6F)",
+                        img = "https://i1.rozetka.ua/goods/10623849/kingston_kc_s44120_6f_images_10623849938.jpg",
+                        price = 779,
+                        SsdCategory = SsdCategories["Budget"]
+                    },
+                    new Ssd
+                    {
+                        name = "Crucial BX500 240GB",
+                        description = "Crucial BX500 240GB 2.5 SATAIII 3D NAND TLC (CT240BX500SSD1)",
+                        img = "https://i1.rozetka.ua/goods/8328832/copy_crucial_ct120bx500ssd1_5bd71f830845f_images_8328832192.jpg",
+                        price = 1139,
+                        SsdCategory = SsdCategories["Budget"]
+                    },
+                    new Ssd
+                    {
+                        name = "Samsung Portable SSD T5 500GB",
+                        description = "Samsung Portable SSD T5 500GB USB 3.1 Type-C V-NAND TLC (MU-PA500B/WW) External",
+                        img = "https://i1.rozetka.ua/goods/2270514/samsung_mu_pa500b_ww_images_2270514360.jpg",
+                        price = 2899,
+                        SsdCategory = SsdCategories["Flagman"]
+                    },
+                    new Ssd
+                    {
+                        name = "Verbatim SSD Vi500 S3 240GB",
+                        description = "Verbatim SSD Vi500 S3 240GB 2.5 SATAIII 3D NAND TLC (70023)",
+                        img = "https://i1.rozetka.ua/goods/8279155/verbatim_70023_images_8279155294.jpg",
+                        price = 999,
+                        SsdCategory = SsdCategories["Budget"]
+                    }
+                );
+            }
+
             content.SaveChanges();
         }
 
@@ -214,8 +256,8 @@ namespace MyIntroShop2._2.Main
                 {
                     var list = new RamCategory[]
                     {
-                        new RamCategory {categoryName = "Flagman", categoryDescription = "Motherboard with low path"},
-                    new RamCategory {categoryName = "Budget", categoryDescription = "Motherboard with hight path"}
+                        new RamCategory {categoryName = "Flagman", categoryDescription = "RAM with low path"},
+                    new RamCategory {categoryName = "Budget", categoryDescription = "RAM with hight path"}
                     };
                     ramcategory = new Dictionary<string, RamCategory>();
                     foreach (RamCategory item in list)
@@ -224,6 +266,28 @@ namespace MyIntroShop2._2.Main
                     }
                 }
                 return ramcategory;
+            }
+        }
+
+        private static Dictionary<string, SsdCategory> ssdcategory;
+        public static Dictionary<string, SsdCategory> SsdCategories
+        {
+            get
+            {
+                if (ssdcategory == null)
+                {
+                    var list = new SsdCategory[]
+                    {
+                        new SsdCategory {categoryName = "Flagman", categoryDescription = "SSD with low path"},
+                    new SsdCategory {categoryName = "Budget", categoryDescription = "SSD with hight path"}
+                    };
+                    ssdcategory = new Dictionary<string, SsdCategory>();
+                    foreach (SsdCategory item in list)
+                    {
+                        ssdcategory.Add(item.categoryName, item);
+                    }
+                }
+                return ssdcategory;
             }
         }
 
@@ -236,8 +300,8 @@ namespace MyIntroShop2._2.Main
                 {
                     var list = new ProcesorCategory[]
                     {
-                        new ProcesorCategory {categoryName = "Flagman", categoryDescription = "Motherboard with low path"},
-                        new ProcesorCategory {categoryName = "Budget", categoryDescription = "Motherboard with hight path"}
+                        new ProcesorCategory {categoryName = "Flagman", categoryDescription = "Procesor with low path"},
+                        new ProcesorCategory {categoryName = "Budget", categoryDescription = "Procesor with hight path"}
                     };
                     procesorcategory = new Dictionary<string, ProcesorCategory>();
                     foreach (ProcesorCategory item in list)

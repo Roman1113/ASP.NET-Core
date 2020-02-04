@@ -32,8 +32,8 @@ namespace MyIntroShop2._2
             services.AddTransient<IPhoneCategory, PhoneCategoryRepository>();
             services.AddTransient<IAllRam, RamRepository>();
             services.AddTransient<IRamCategory, RamCategoryRepository>();
-            //services.AddTransient<IAllSsd, MockSsd>();
-            //services.AddTransient<ISsdCategory, MockSsdCategory>();
+            services.AddTransient<IAllSsd, SsdRepository>();
+            services.AddTransient<ISsdCategory, SsdCategoryRepository>();
             services.AddTransient<IProcesorCategory, ProcesorCategoryRepository>();
             services.AddTransient<IAllProcesors, ProcesorRepository>();
             services.AddTransient<IAllMotherboards, MotherboardRepository>();
