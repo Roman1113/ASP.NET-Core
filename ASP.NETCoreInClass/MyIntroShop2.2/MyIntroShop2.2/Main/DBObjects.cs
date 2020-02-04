@@ -337,7 +337,7 @@ namespace MyIntroShop2._2.Main
         {
             get
             {
-                if (motherboardcategory == null)
+                if (procesorcategory == null)
                 {
                     var list = new ProcesorCategory[]
                     {
@@ -386,8 +386,8 @@ namespace MyIntroShop2._2.Main
                 {
                     var list = new VideoCardCategory[]
                     {
-                        new VideoCardCategory {categoryName = "Flagman", categoryDescription = "Motherboard with low path"},
-                    new VideoCardCategory {categoryName = "Budget", categoryDescription = "Motherboard with hight path"}
+                        new VideoCardCategory {categoryName = "Flagman", categoryDescription = "Video Card with low path"},
+                    new VideoCardCategory {categoryName = "Budget", categoryDescription = "Video Card with hight path"}
                     };
                     videoCardcategory = new Dictionary<string, VideoCardCategory>();
                     foreach (VideoCardCategory item in list)
