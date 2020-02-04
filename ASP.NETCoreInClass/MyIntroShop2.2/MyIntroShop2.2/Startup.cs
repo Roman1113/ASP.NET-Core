@@ -38,8 +38,8 @@ namespace MyIntroShop2._2
             services.AddTransient<IAllProcesors, ProcesorRepository>();
             services.AddTransient<IAllMotherboards, MotherboardRepository>();
             services.AddTransient<IMotherboardsCategory, MotherboardCategoryRepository>();
-            //services.AddTransient<IAllVideoCards, MockVideoCard>();
-            //services.AddTransient<IVideoCardCategory, MockVideoCardCategory>();
+            services.AddTransient<IAllVideoCards, VideoCardRepository>();
+            services.AddTransient<IVideoCardCategory, VideoCardCategoryRepository>();
             services.AddMvc();
         }
 

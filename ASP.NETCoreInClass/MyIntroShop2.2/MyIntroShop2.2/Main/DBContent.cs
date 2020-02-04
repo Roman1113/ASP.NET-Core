@@ -23,7 +23,7 @@ namespace MyIntroShop2._2.Main
         public DbSet<RamCategory> RamCategories { get; set; }
         public DbSet<Ssd> Ssds { get; set; }
         public DbSet<SsdCategory> SsdCategories { get; set; }
-        //public DbSet<VideoCard> VideoCards { get; set; }
-        //public DbSet<VideoCardCategory> VideoCardCategories { get; set; }
+        public DbSet<VideoCard> VideoCards { get; set; }
+        public DbSet<VideoCardCategory> VideoCardCategories { get; set; }
     }
 }
