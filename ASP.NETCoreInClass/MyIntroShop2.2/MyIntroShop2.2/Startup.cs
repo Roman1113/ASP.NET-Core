@@ -34,10 +34,10 @@ namespace MyIntroShop2._2
             //services.AddTransient<IRamCategory, MockRamCategory>();
             //services.AddTransient<IAllSsd, MockSsd>();
             //services.AddTransient<ISsdCategory, MockSsdCategory>();
-            //services.AddTransient<IProcesorCategory, MockProcesorCategory>();
-            //services.AddTransient<IAllProcesors, MockProcesor>();
-            //services.AddTransient<IAllMotherboards, MockMotherboards>();
-            //services.AddTransient<IMotherboardsCategory, MockMotherboardCategory>();
+            services.AddTransient<IProcesorCategory, ProcesorCategoryRepository>();
+            services.AddTransient<IAllProcesors, ProcesorRepository>();
+            services.AddTransient<IAllMotherboards, MotherboardRepository>();
+            services.AddTransient<IMotherboardsCategory, MotherboardCategoryRepository>();
             //services.AddTransient<IAllVideoCards, MockVideoCard>();
             //services.AddTransient<IVideoCardCategory, MockVideoCardCategory>();
             services.AddMvc();

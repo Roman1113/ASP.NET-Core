@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace MyIntroShop2._2.Main.Repository
 {
-    public class MotherboardCategoryRepository : IMotherboardsCategory
+    public class ProcesorCategoryRepository : IProcesorCategory
     {
         private readonly DBContent dbContent;
-        public MotherboardCategoryRepository(DBContent dbContent)
+        public ProcesorCategoryRepository(DBContent dbContent)
         {
             this.dbContent = dbContent;
         }
-        public IEnumerable<MotherboardCategory> AllMotherboardsCategories => dbContent.MotherboardCategories;
+        public IEnumerable<ProcesorCategory> AllProcesorsCategories => dbContent.ProcesorCategories;
     }
 }

@@ -15,10 +15,10 @@ namespace MyIntroShop2._2.Main
             }
         public DbSet<Phone> Phone { get; set; }
         public DbSet<PhoneCategory> PhoneCategories { get; set; }
-        //public DbSet<Motherboard> Motherboards { get; set; }
-        //public DbSet<MotherboardCategory> MotherboardCategories { get; set; }
-        //public DbSet<Procesor> Procesors { get; set; }
-        //public DbSet<ProcesorCategory> ProcesorCategories { get; set; }
+        public DbSet<Motherboard> Motherboards { get; set; }
+        public DbSet<MotherboardCategory> MotherboardCategories { get; set; }
+        public DbSet<Procesor> Procesors { get; set; }
+        public DbSet<ProcesorCategory> ProcesorCategories { get; set; }
         //public DbSet<Ram> Rams { get; set; }
         //public DbSet<RamCategory> RamCategories { get; set; }
         //public DbSet<Ssd> Ssds { get; set; }

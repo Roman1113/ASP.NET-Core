@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyIntroShop2._2.Main;
 
 namespace MyIntroShop2._2.Migrations
 {
     [DbContext(typeof(DBContent))]
-    partial class DBContentModelSnapshot : ModelSnapshot
+    [Migration("20200204142101_add motherboards")]
+    partial class addmotherboards
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -95,44 +97,6 @@ namespace MyIntroShop2._2.Migrations
                     b.ToTable("PhoneCategories");
                 });
 
-            modelBuilder.Entity("MyIntroShop2._2.Main.Models.Procesor", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("ProcesorCategoryId");
-
-                    b.Property<string>("description");
-
-                    b.Property<string>("img");
-
-                    b.Property<string>("name");
-
-                    b.Property<long>("price");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProcesorCategoryId");
-
-                    b.ToTable("Procesors");
-                });
-
-            modelBuilder.Entity("MyIntroShop2._2.Main.Models.ProcesorCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("categoryDescription");
-
-                    b.Property<string>("categoryName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProcesorCategories");
-                });
-
             modelBuilder.Entity("MyIntroShop2._2.Main.Models.Motherboard", b =>
                 {
                     b.HasOne("MyIntroShop2._2.Main.Models.MotherboardCategory", "MotherboardCategory")
@@ -145,13 +109,6 @@ namespace MyIntroShop2._2.Migrations
                     b.HasOne("MyIntroShop2._2.Main.Models.PhoneCategory", "PhoneCategory")
                         .WithMany("phones")
                         .HasForeignKey("PhoneCategoryId");
-                });
-
-            modelBuilder.Entity("MyIntroShop2._2.Main.Models.Procesor", b =>
-                {
-                    b.HasOne("MyIntroShop2._2.Main.Models.ProcesorCategory", "ProcesorCategory")
-                        .WithMany("procesors")
-                        .HasForeignKey("ProcesorCategoryId");
                 });
 #pragma warning restore 612, 618
         }

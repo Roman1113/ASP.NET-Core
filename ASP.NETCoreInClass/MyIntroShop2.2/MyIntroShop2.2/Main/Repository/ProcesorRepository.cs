@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace MyIntroShop2._2.Main.Repository
 {
-    public class MotherboardRepository : IAllMotherboards
+    public class ProcesorRepository : IAllProcesors
     {
         private readonly DBContent dbContent;
-        public MotherboardRepository(DBContent dbContent)
+        public ProcesorRepository(DBContent dbContent)
         {
             this.dbContent = dbContent;
         }
 
-        public IEnumerable<Motherboard> motherboards => dbContent.Motherboards.Include(c => c.MotherboardCategory);
+        public IEnumerable<Procesor> procesors => dbContent.Procesors.Include(c => c.ProcesorCategory);
     }
 }
