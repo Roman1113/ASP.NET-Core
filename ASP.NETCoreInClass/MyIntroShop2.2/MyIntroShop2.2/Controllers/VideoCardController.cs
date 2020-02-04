@@ -21,10 +21,10 @@ namespace MyIntroShop2._2.Controllers
 
         public ViewResult List()
         {
-            ViewBag.Title = "VideoCard";
+            ViewBag.Title = "Video Card";
             VideoCardListViewModel obj = new VideoCardListViewModel();
             obj.allVideoCards = _allVideoCard.videoCards;
-            obj.currentCategory = "VideoCard: ";
+            obj.currentCategory = "Video Card: ";
 
             return View(obj);
         }

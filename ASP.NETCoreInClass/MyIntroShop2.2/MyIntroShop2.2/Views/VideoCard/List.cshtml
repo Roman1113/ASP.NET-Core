@@ -1,16 +1,16 @@
 ﻿@model VideoCardListViewModel
-<h1>Телефони</h1>
+<h1>Відеокарти</h1>
 
 <div class="row mt-5 mb-2">
     @{
         foreach (var item in Model.allVideoCards)
         {
-            <div class="col-lg-6">
+            <div class="col-lg-6 videocard" style="text-align: center;">
                 <h3>@Model.currentCategory</h3>
                 <div>Vendor: @item.name</div>
                 <div>Description: @item.description</div>
                 <img class="imgPhone" src="@item.img" alt="@item.name" />
-                <div>Price: @item.price.ToString("c")</div>
+                <div>Price: @item.price.ToString()+грн</div>
                 <p><a class="btn btn-warning" href="#">Детально</a></p>
             </div>
         }

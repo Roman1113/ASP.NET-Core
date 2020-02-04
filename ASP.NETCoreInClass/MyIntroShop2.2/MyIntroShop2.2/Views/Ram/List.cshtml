@@ -1,11 +1,11 @@
 ﻿@model RamListViewModel
-<h1>Телефони</h1>
+<h1>Оперативна память</h1>
 
 <div class="row mt-5 mb-2">
     @{
         foreach (var item in Model.allRams)
         {
-            <div class="col-lg-6">
+            <div class="col-lg-6" style="text-align: center;">
                 <h3>@Model.currentCategory</h3>
                 <div>Vendor: @item.name</div>
                 <div>Description: @item.description</div>
