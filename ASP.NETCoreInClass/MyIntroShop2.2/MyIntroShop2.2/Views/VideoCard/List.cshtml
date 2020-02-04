@@ -5,12 +5,12 @@
     @{
         foreach (var item in Model.allVideoCards)
         {
-            <div class="col-lg-6 videocard" style="text-align: center;">
+            <div class="col-lg-6" style="text-align: center;">
                 <h3>@Model.currentCategory</h3>
                 <div>Vendor: @item.name</div>
                 <div>Description: @item.description</div>
-                <img class="imgPhone" src="@item.img" alt="@item.name" />
-                <div>Price: @item.price.ToString()+грн</div>
+                <img class="imgPhone" style="width: 500px;" src="@item.img" alt="@item.name" />
+                <div>Price: @item.price.ToString() грн</div>
                 <p><a class="btn btn-warning" href="#">Детально</a></p>
             </div>
         }

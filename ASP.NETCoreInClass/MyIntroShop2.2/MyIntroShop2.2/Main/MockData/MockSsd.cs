@@ -19,34 +19,34 @@ namespace MyIntroShop2._2.Main.MockData
                 {
                     new Ssd
                     {
-                        name = "Samsung S10",
-                        description = "Best phone by sumsung",
-                        img = "https://i2.rozetka.ua/goods/11052630/samsung_galaxy_s10_plus_6_128_gb_black_sm_g975fzkdsek_images_11052630657.jpg",
-                        price = 23000,
+                        name = "Kingston SSD HyperX Fury 3D 240GB",
+                        description = "Kingston SSD HyperX Fury 3D 120GB 2.5 SATAIII TLC (KC–S44120–6F)",
+                        img = "https://i1.rozetka.ua/goods/10623849/kingston_kc_s44120_6f_images_10623849938.jpg",
+                        price = 779,
                         SsdCategory = _ssdCategory.AllSsdsCategories.First()
                     },
                     new Ssd
                     {
-                        name = "Nokia 3310",
-                        description = "Old phone",
-                        img = "https://static.turbosquid.com/Preview/001329/666/6L/_DHQ.jpg",
-                        price = 700,
+                        name = "Crucial BX500 240GB",
+                        description = "Crucial BX500 240GB 2.5 SATAIII 3D NAND TLC (CT240BX500SSD1)",
+                        img = "https://i1.rozetka.ua/goods/8328832/copy_crucial_ct120bx500ssd1_5bd71f830845f_images_8328832192.jpg",
+                        price = 1139,
                         SsdCategory = _ssdCategory.AllSsdsCategories.Last()
                     },
                     new Ssd
                     {
-                        name = "Lenovo z-5",
-                        description = "Best phone by Lenovo",
-                        img = "https://i.allo.ua/media/catalog/product/cache/1/image/425x295/799896e5c6c37e11608b9f8e1d047d15/f/i/file_613_3.jpg",
-                        price = 3900,
+                        name = "Samsung Portable SSD T5 500GB",
+                        description = "Samsung Portable SSD T5 500GB USB 3.1 Type-C V-NAND TLC (MU-PA500B/WW) External",
+                        img = "https://i1.rozetka.ua/goods/2270514/samsung_mu_pa500b_ww_images_2270514360.jpg",
+                        price = 2899,
                         SsdCategory = _ssdCategory.AllSsdsCategories.First()
                     },
                     new Ssd
                     {
-                        name = "Xiaomi Redmy 8",
-                        description = "Best phone by Xiaomi",
-                        img = "https://i8.rozetka.ua/goods/14142417/xiaomi_redmi_note_8_pro_6_128_black_images_14142417355.jpg",
-                        price = 6999,
+                        name = "Verbatim SSD Vi500 S3 240GB",
+                        description = "Verbatim SSD Vi500 S3 240GB 2.5 SATAIII 3D NAND TLC (70023)",
+                        img = "https://i1.rozetka.ua/goods/8279155/verbatim_70023_images_8279155294.jpg",
+                        price = 999,
                         SsdCategory = _ssdCategory.AllSsdsCategories.First()
                     }
                 };
