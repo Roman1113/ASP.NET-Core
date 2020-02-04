@@ -6,11 +6,11 @@
         foreach (var item in Model.allVideoCards)
         {
             <div class="col-lg-6" style="text-align: center;">
-                <h3>@Model.currentCategory</h3>
-                <div>Vendor: @item.name</div>
-                <div>Description: @item.description</div>
+                <h3>@item.name</h3>
+                <div>Продавець : @item.name</div>
+                <div>Опис : @item.description</div>
                 <img class="imgPhone" style="width: 500px;" src="@item.img" alt="@item.name" />
-                <div>Price: @item.price.ToString() грн</div>
+                <div>Ціна : @item.price.ToString() грн</div>
                 <p><a class="btn btn-warning" href="#">Детально</a></p>
             </div>
         }

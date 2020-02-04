@@ -8,6 +8,11 @@
     height:300px;
 }
 
-.categor{
+.category {
+    color: red;
+    padding-right:20px;
+}
+
+.company {
     color: red;
 }
