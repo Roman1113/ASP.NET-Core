@@ -30,8 +30,8 @@ namespace MyIntroShop2._2
 
             services.AddTransient<IAllPhones, PhoneRepository>();
             services.AddTransient<IPhoneCategory, PhoneCategoryRepository>();
-            //services.AddTransient<IAllRam, MockRam>();
-            //services.AddTransient<IRamCategory, MockRamCategory>();
+            services.AddTransient<IAllRam, RamRepository>();
+            services.AddTransient<IRamCategory, RamCategoryRepository>();
             //services.AddTransient<IAllSsd, MockSsd>();
             //services.AddTransient<ISsdCategory, MockSsdCategory>();
             services.AddTransient<IProcesorCategory, ProcesorCategoryRepository>();
