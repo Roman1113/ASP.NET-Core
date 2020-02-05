@@ -56,6 +56,14 @@ namespace MyIntroShop2._2
                 DBContent content = scope.ServiceProvider.GetRequiredService<DBContent>();
                 DBObjects.Initial(content);
             }
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Phone}/{action=List}/{id?}");
+            });
+
         }
     }
 }
