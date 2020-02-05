@@ -10,12 +10,27 @@ namespace MyBlog.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Home_Page()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Portfolio()
+        {
+            return View();
+        }
+
+        public IActionResult Services()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult Blog_post()
         {
             return View();
         }
