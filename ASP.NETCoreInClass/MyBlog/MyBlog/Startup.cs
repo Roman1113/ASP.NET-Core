@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyBlog.Entityes;
 
 namespace MyBlog
 {
@@ -30,6 +32,8 @@ namespace MyBlog
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var connections = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<DBContext>(options => options.UseSqlServer(connections));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -55,6 +59,12 @@ namespace MyBlog
                     name: "default",
                     template: "{controller=Home}/{action=Home_Page}/{id?}");
             });
+
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                DBContext context = scope.ServiceProvider.GetRequiredService<DBContext>();
+                SeedBlogText.SeedBlogData(context);
+            }
         }
     }
 }
