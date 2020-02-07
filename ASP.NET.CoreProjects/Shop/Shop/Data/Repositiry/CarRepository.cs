@@ -23,5 +23,6 @@ namespace Shop.Data.Repositiry
 
         public Car getOjectCar(int carId) => appDBContent.Car.FirstOrDefault(p => p.id == carId);
       
+
     }
 }
