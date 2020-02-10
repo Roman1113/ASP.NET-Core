@@ -104,7 +104,7 @@ namespace MyBlog.Entityes
                     "Мене часто переслідували роздратування," +
                     " пригніченість, а інколи й приреченість, адже я, насамперед," +
                     "жива людина.Та я говорила: Сама впораюся.,",
-                    img = "/images/mother.jpg"
+                    img = "/images/mars.jpg"
                 });
             }
             context.SaveChanges();

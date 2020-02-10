@@ -13,10 +13,10 @@ namespace MyBlog.Migrations
                 {
                     id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    author = table.Column<string>(nullable: true),
-                    title = table.Column<string>(nullable: true),
-                    preview = table.Column<string>(nullable: true),
-                    fullPost = table.Column<string>(nullable: true),
+                    author = table.Column<string>(maxLength: 30, nullable: false),
+                    title = table.Column<string>(maxLength: 100, nullable: false),
+                    preview = table.Column<string>(nullable: false),
+                    fullPost = table.Column<string>(nullable: false),
                     img = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

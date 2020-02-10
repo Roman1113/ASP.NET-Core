@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyBlog.Entityes;
+using MyBlog.Entityes.Implements;
+using MyBlog.Interfaces;
 
 namespace MyBlog
 {
@@ -34,7 +36,7 @@ namespace MyBlog
 
             var connections = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DBContext>(options => options.UseSqlServer(connections));
-
+            services.AddTransient<IPostRepository, PostRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
