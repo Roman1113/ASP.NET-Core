@@ -12,11 +12,11 @@
             {
             <div class="fancy-border">
                 <h1>@item.title</h1>
-                <img src=@item.img alt="@item.title" />
+                <img src="~/images/@item.img" alt="@item.title" />
                 <h3>@item.preview</h3>
                 <a class="btn btn-success" asp-controller="Blog" asp-action="Post" asp-route-id="@item.id">Read more</a>
                 <a class="btn btn-warning" asp-controller="Blog" asp-action="Edit" asp-route-id="@item.id">Edit</a>
-                <a class="btn btn-danger" asp-controller="Blog" asp-action="Post" asp-route-id="@item.id">Delete</a>
+                <a class="btn btn-danger" asp-controller="Blog" asp-action="Delete" asp-route-id="@item.id">Delete</a>
             </div>
             }
         </div>
