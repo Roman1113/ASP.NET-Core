@@ -9,7 +9,7 @@ using MyBlog.Entityes;
 namespace MyBlog.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20200210093803_Blog")]
+    [Migration("20200212075315_Blog")]
     partial class Blog
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

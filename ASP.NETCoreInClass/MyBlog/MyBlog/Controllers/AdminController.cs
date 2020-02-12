@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using MyBlog.Interfaces;
-using MyBlog.Migrations;
 using MyBlog.Models;
 using MyBlog.ViewModel;
 
@@ -65,12 +64,11 @@ namespace MyBlog.Controllers
                 };
                 _postRep.CreatePost(newPost);
 
-                //return RedirectToAction("CreatePost", new RouteValueDictionary(
-                //                new { controller = "Blog", action = "Post", Id = newPost.id }));
+                return RedirectToRoute("default", new { controller = "Blog", action = "Post", newPost.id });
 
             }
-            
-            return Redirect("~/Blog/Index");
+            return View();
+
         }
     }
 }

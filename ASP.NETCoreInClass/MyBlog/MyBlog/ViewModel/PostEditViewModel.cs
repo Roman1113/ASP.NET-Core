@@ -5,7 +5,10 @@ using System.Threading.Tasks;
 
 namespace MyBlog.ViewModel
 {
-    public class PostEditViewModel
+    public class PostEditViewModel : PostCreateViewModel
     {
+        public int Id { get; set; }
+        public string ExistImgPath { get; set; }
+
     }
 }
