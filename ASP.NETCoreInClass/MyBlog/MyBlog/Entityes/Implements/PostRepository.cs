@@ -36,7 +36,9 @@ namespace MyBlog.Entityes.Implements
 
         public IEnumerable<BlogModel> GetAllPosts()
         {
-            return context.Blog;
+            var list_reverse = context.Blog.ToList();
+            list_reverse.Reverse();
+            return list_reverse;
         }
 
         public BlogModel GetPostById(int Id)

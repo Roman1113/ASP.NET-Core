@@ -1,0 +1,12 @@
+﻿@model MyBlog.Models.BlogModel
+
+<h1>Are you sure you want to delete the post?</h1>
+
+<form enctype="multipart/form-data" asp-controller="Blog" asp-action="Delete" asp-route-id="@Model.id" class="mt-3">
+
+    <div class="form-group row">
+        <button type="submit" class="btn btn-info">Delete</button>   
+        <a asp-controller="Blog" asp-action="Index" class="btn btn-info">Cancel</a>
+    </div>
+</form>
+

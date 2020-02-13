@@ -41,6 +41,23 @@ namespace MyBlog.Controllers
             return View(post);
         }
 
+    
+        public IActionResult Delete(int id)
+        {
+            var post = _postRepository.GetPostById(id);
+            if (post.img != null && post.img != "no.png")
+            {
+                //видаляємо фото з папки wwwroot по заданому шляху
+                string filePath = Path.Combine(hostingEnvironment.WebRootPath, "images", post.img);
+                System.IO.File.Delete(filePath);
+            }
+            //видаляємо дані з бази по id
+            _postRepository.DeletePost(id);
+            //редірект на Блог
+            return RedirectToAction("Index");
+
+        }
+
         public IActionResult Index()
         {
             var posts = _postRepository.GetAllPosts().ToList(); 
@@ -108,11 +125,10 @@ namespace MyBlog.Controllers
             return uniqFileName;
         }
 
-        [Route("Blog/Delete/{id}")]
-        public IActionResult Delete(int id)
-        {
-            _postRepository.DeletePost(id);
-            return View();
-        }
+        ////[Route("Blog/Delete/{id}")]
+        //public IActionResult DeleteRep()
+        //{
+        //    return View();
+        //}
     }
 }

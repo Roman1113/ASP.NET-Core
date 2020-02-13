@@ -52,7 +52,7 @@ namespace MyBlog.Controllers
                 }
                 else
                 {
-                    uniqFileName = "noimage.png";
+                    uniqFileName = "no.png";
                 }
                 BlogModel newPost = new BlogModel
                 {
@@ -64,7 +64,7 @@ namespace MyBlog.Controllers
                 };
                 _postRep.CreatePost(newPost);
 
-                return RedirectToRoute("default", new { controller = "Blog", action = "Post", newPost.id });
+                return RedirectToRoute("default", new { controller = "Blog", action = "Index" });
 
             }
             return View();
