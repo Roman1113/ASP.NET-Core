@@ -31,6 +31,12 @@ namespace MyBlog.Controllers
         [Route("Blog/Post/{id}")]
         public IActionResult Post(int id)
         {
+            logger.LogTrace("Trace Log");
+            logger.LogDebug("Debug Log");
+            logger.LogInformation("Information Log");
+            logger.LogWarning("Warning Log");
+            logger.LogError("Error Log");
+            logger.LogCritical("Critical Log");
             //var query = _context.Blog.AsQueryable();
 
             //var posts = query.Where(post => post.id == id).Select(p => new BlogModel
@@ -42,7 +48,11 @@ namespace MyBlog.Controllers
             //    img = p.img,
             //}).SingleOrDefault();
             var post = _postRepository.GetPostById(id);
-
+            if (post == null)
+            {
+                Response.StatusCode = 404;
+                return View("PostNotFound", id);
+            }
             return View(post);
         }
 

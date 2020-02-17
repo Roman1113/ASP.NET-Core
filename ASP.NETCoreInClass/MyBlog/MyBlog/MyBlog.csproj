@@ -19,4 +19,11 @@
     <Folder Include="wwwroot\css_pirobox\test\" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Content Update="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
