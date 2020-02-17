@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using MyBlog.Entityes;
 using MyBlog.Interfaces;
 using MyBlog.Models;
@@ -16,11 +17,15 @@ namespace MyBlog.Controllers
     {
         private readonly IPostRepository _postRepository;
         private readonly IHostingEnvironment hostingEnvironment;
+        private readonly ILogger logger;
 
-        public BlogController(DBContext context, IPostRepository postRepository, IHostingEnvironment hostingEnvironment)
+        public BlogController(DBContext context, IPostRepository postRepository,
+             IHostingEnvironment hostingEnvironment,
+             ILogger<BlogController> logger)
         {
-        this.hostingEnvironment = hostingEnvironment;
             _postRepository = postRepository;
+            this.hostingEnvironment = hostingEnvironment;
+            this.logger = logger;
         }
 
         [Route("Blog/Post/{id}")]
