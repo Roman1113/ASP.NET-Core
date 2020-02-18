@@ -37,8 +37,9 @@ namespace MyBlog.Controllers
                     if (result.Succeeded)
                     {
                         await signInManager.SignInAsync(user, isPersistent: false);
-                        return RedirectToAction("Blog", "Blog");
-                    }
+                        //return RedirectToAction("Blog", "Post");
+                    return RedirectToRoute("default", new { controller = "Blog", action = "Index" });
+                }
 
                     foreach (var error in result.Errors)
                     {
@@ -52,8 +53,9 @@ namespace MyBlog.Controllers
             public async Task<IActionResult> Logout()
             {
                 await signInManager.SignOutAsync();
-                return RedirectToAction("Blog", "Blog");
-            }
+                //return RedirectToAction("Blog", "Index");
+            return RedirectToRoute("default", new { controller = "Blog", action = "Index" });
+        }
         
     }
 }
