@@ -4,15 +4,27 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using MyBlog.Entityes;
+using MyBlog.Interfaces;
 using MyBlog.Models;
 
 namespace MyBlog.Controllers
 {
     public class HomeController : Controller
     {
+
+        private readonly IPostRepository _postRepository;  
+
+        public HomeController(IPostRepository postRepository )
+        {
+            _postRepository = postRepository;
+        }
+
         public IActionResult Home_Page()
         {
-            return View();
+            var posts = _postRepository.GetAllPosts().ToList();
+            return View(posts);
+           // return View();
         }
 
         public IActionResult Portfolio()
