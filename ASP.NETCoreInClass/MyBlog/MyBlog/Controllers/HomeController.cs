@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MyBlog.Entityes;
 using MyBlog.Interfaces;
@@ -20,28 +21,29 @@ namespace MyBlog.Controllers
             _postRepository = postRepository;
         }
 
+        [AllowAnonymous]
         public IActionResult Home_Page()
         {
             var posts = _postRepository.GetAllPosts().ToList();
             return View(posts);
            // return View();
         }
-
+        [AllowAnonymous]
         public IActionResult Portfolio()
         {
             return View();
         }
-
+        [AllowAnonymous]
         public IActionResult Services()
         {
             return View();
         }
-
+        [AllowAnonymous]
         public IActionResult Contact()
         {
             return View();
         }
-
+        [AllowAnonymous]
         public IActionResult Blog_post()
         {
             return View();

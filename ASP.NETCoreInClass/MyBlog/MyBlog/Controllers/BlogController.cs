@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -29,6 +30,7 @@ namespace MyBlog.Controllers
         }
 
         [Route("Blog/Post/{id}")]
+        [AllowAnonymous]
         public IActionResult Post(int id)
         {
             logger.LogTrace("Trace Log");
@@ -73,6 +75,7 @@ namespace MyBlog.Controllers
 
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var posts = _postRepository.GetAllPosts().ToList(); 

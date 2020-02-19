@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyBlog.ViewModel;
@@ -22,13 +23,15 @@ namespace MyBlog.Controllers
             }
 
             [HttpGet]
-            public IActionResult Register()
+        [AllowAnonymous]
+        public IActionResult Register()
             {
                 return View();
             }
 
             [HttpPost]
-            public async Task<IActionResult> Register(RegisterViewModel model)
+        [AllowAnonymous]
+        public async Task<IActionResult> Register(RegisterViewModel model)
             {
                 if (ModelState.IsValid)
                 {
@@ -56,6 +59,42 @@ namespace MyBlog.Controllers
                 //return RedirectToAction("Blog", "Index");
             return RedirectToRoute("default", new { controller = "Blog", action = "Index" });
         }
-        
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await signInManager.PasswordSignInAsync(
+                    model.Email, model.Password, model.RememberMe, false);
+
+                if (result.Succeeded)
+                {
+                    if (!string.IsNullOrEmpty(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Blog");
+                        //return RedirectToRoute("default", new { controller = "Blog", action = "Index" });
+                    }
+
+                }
+
+                ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+            }
+
+            return View(model);
+        }
+
     }
 }

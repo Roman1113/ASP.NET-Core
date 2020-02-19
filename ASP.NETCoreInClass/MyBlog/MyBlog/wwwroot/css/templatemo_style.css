@@ -158,7 +158,7 @@ cite {
 .button a {
     width: 60px;
     padding: 4px 25px 4px 0;
-    background: url(images/templatemo_readmore.png) center right no-repeat;
+    background: url(~images/templatemo_readmore.png) center right no-repeat;
     color: #12758e;
     font-weight: bold;
     font-size: 11px;
@@ -193,7 +193,7 @@ cite {
 #templatemo_header_wrapper {
     width: 100%;
     height: 111px;
-    background: url(images/templatemo_header.jpg) repeat-x;
+    background: url(~images/templatemo_header.jpg) repeat-x;
 }
 
 #templatemo_header_wrapper img {
@@ -248,7 +248,7 @@ cite {
         font-size: 16px;
         font-weight: bold;
         text-decoration: none;
-        background: url(images/templatemo_rss.png) left center no-repeat;
+        background: url(~images/templatemo_rss.png) left center no-repeat;
     }
 
         #templatemo_header #templatemo_rss a:hover {
@@ -301,7 +301,7 @@ cite {
 
                 #templatemo_menu ul li a:hover, #templatemo_menu ul li .current {
                     color: #fff;
-                    background: url(images/templatemo_menu_hover.jpg) center bottom no-repeat;
+                    background: url(~images/templatemo_menu_hover.jpg) center bottom no-repeat;
                 }
 
 /* end of menu */
@@ -329,7 +329,7 @@ cite {
     position: relative;
     clear: both;
     padding: 30px;
-    background: url(images/templatemo_post_top.png) top left no-repeat;
+    background: url(~images/templatemo_post_top.png) top left no-repeat;
 }
 
     .post_section .bottom {
@@ -339,7 +339,7 @@ cite {
         right: 0;
         width: 465px;
         height: 155px;
-        background: url(images/templatemo_post_bottom.png) no-repeat;
+        background: url(~images/templatemo_post_bottom.png) no-repeat;
     }
 
     .post_section h2 {
@@ -377,7 +377,7 @@ cite {
         padding-top: 10px;
         font-size: 16px;
         font-weight: bold;
-        background: url(images/templatemo_comment.png) no-repeat;
+        background: url(~images/templatemo_comment.png) no-repeat;
     }
 
         .post_section .comment a {
@@ -682,7 +682,7 @@ cite {
 #templatemo_footer_wrapper {
     width: 100%;
     height: 85px;
-    background: #0f99bc url(images/templatemo_footer.png) repeat-x;
+    background: #0f99bc url(~images/templatemo_footer.png) repeat-x;
 }
 
 #templatemo_footer {
