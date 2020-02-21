@@ -9,5 +9,7 @@ namespace MyBlog.Models
     public class AppUser : IdentityUser
     {
         public string City { get; set; }
+        public string Street { get; set; }
+        public string Position { get; set; }
     }
 }
