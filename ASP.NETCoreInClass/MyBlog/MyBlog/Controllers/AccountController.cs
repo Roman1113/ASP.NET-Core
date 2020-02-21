@@ -5,17 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using MyBlog.Models;
 using MyBlog.ViewModel;
 
 namespace MyBlog.Controllers
 {
     public class AccountController : Controller
         {
-            private readonly UserManager<IdentityUser> userManager;
-            private readonly SignInManager<IdentityUser> signInManager;
+            private readonly UserManager<AppUser> userManager;
+            private readonly SignInManager<AppUser> signInManager;
 
-            public AccountController(UserManager<IdentityUser> userManager,
-                SignInManager<IdentityUser> signInManager)
+            public AccountController(UserManager<AppUser> userManager,
+                SignInManager<AppUser> signInManager)
             {
                 this.userManager = userManager;
                 this.signInManager = signInManager;
@@ -35,7 +36,7 @@ namespace MyBlog.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var user = new IdentityUser { UserName = model.Email, Email = model.Email };
+                    var user = new AppUser { UserName = model.Email, Email = model.Email };
                     var result = await userManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {

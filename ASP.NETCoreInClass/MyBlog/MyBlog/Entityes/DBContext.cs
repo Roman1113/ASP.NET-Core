@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyBlog.Entityes
 {
-        public class DBContext : IdentityDbContext
+        public class DBContext : IdentityDbContext<AppUser>
     {
             public DBContext(DbContextOptions<DBContext> options) : base(options)
             {

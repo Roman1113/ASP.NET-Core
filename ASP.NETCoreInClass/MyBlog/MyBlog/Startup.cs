@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using MyBlog.Entityes;
 using MyBlog.Entityes.Implements;
 using MyBlog.Interfaces;
+using MyBlog.Models;
 
 namespace MyBlog
 {
@@ -40,7 +41,7 @@ namespace MyBlog
             var connections = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DBContext>(options => options.UseSqlServer(connections));
             services.AddTransient<IPostRepository, PostRepository>();
-            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+            services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.Password.RequiredLength = 5;
                 options.Password.RequiredUniqueChars = 2;
