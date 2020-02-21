@@ -17,7 +17,7 @@
     },
     "MyBlog": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "applicationUrl": "http://localhost:8080",
       "environmentVariables": {
         //"ASPNETCORE_ENVIRONMENT": "Development"
