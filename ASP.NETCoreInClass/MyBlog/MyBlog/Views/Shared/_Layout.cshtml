@@ -28,6 +28,26 @@
         <link href="~/css_pirobox/white/style.css" media="screen" title="shadow" rel="stylesheet" type="text/css" />
         <link href="~/css/site.css" rel="stylesheet" type="text/css" />
     </environment>
+
+    <environment include="Production">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Production">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <environment include="Production">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Tripod Blog Post - Free CSS Templates</title>
+        <meta name="keywords" content="free css templates, tripod, blog, full post, article page" />
+        <meta name="description" content="Tripod Blog Post - free blog theme provided by templatemo.com" />
+        <link href="~/css/templatemo_style.css" rel="stylesheet" type="text/css" />
+        <link href="~/css_pirobox/white/style.css" media="screen" title="shadow" rel="stylesheet" type="text/css" />
+        <link href="~/css/site.css" rel="stylesheet" type="text/css" />
+    </environment>
 </head>
 <body>
     @*<div class="preloader">
@@ -66,7 +86,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="CreateRole">Create Role</a>
-                            </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="ListRoles">List Roles</a>
+                        </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="nav-item">

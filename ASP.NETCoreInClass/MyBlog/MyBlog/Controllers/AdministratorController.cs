@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyBlog.Models;
@@ -21,12 +22,14 @@ namespace MyBlog.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult CreateRole()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> CreateRole(CreateRoleViewModel model)
         {
             if (ModelState.IsValid)
@@ -115,6 +118,34 @@ namespace MyBlog.Controllers
 
                 return View(model);
             }
+        }
+        //public IActionResult Delete(string id)
+        //{
+        //    //var role = AppDb.Roles.Where(d => d.Name == "my role name").FirstOrDefault();
+        //    //AppDb.Roles.Remove(role);
+        //    //AppDb.SaveChanges();
+
+        //    var role = roleManager.FindByIdAsync(id);
+        //    if(role != null)
+        //    {
+        //        roleManager.Delete(role);
+        //    }
+        //    return RedirectToAction("Index, Blog");
+        //}
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(string id)
+        {
+            IdentityRole role = await roleManager.FindByIdAsync(id);
+            if (role != null)
+            {
+                IdentityResult result = await roleManager.DeleteAsync(role);
+                if (result.Succeeded)
+                    return RedirectToAction("Index, Blog");
+            }
+            else
+                ModelState.AddModelError("", "No role found");
+            return View("Index", roleManager.Roles);
         }
     }
 }
