@@ -64,9 +64,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Admin">AdminPanel</a>
                         </li>
-                        @*<li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Registration</a>
-                            </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="CreateRole">Create Role</a>
+                            </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="nav-item">
