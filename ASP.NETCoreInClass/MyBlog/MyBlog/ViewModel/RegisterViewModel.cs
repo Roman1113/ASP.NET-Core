@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -24,5 +25,8 @@ namespace MyBlog.ViewModel
         public string City { get; set; }
         public string Street { get; set; }
         public string Position { get; set; }
+
+        [Display(Name = "Profile Picture")]
+        public IFormFile ImageName { get; set; }
     }
 }

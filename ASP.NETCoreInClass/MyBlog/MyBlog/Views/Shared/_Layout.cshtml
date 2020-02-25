@@ -81,36 +81,45 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="Index">Blog post</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Admin">AdminPanel</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="CreateRole">Create Role</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="ListRoles">List Roles</a>
-                        </li>
-                        @if (SignInManager.IsSignedIn(User))
+                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Moderator"))
                         {
                             <li class="nav-item">
-                                <form method="post" asp-controller="Account" asp-action="logout">
-                                    <button type="submit" style="width:auto"
-                                            class="nav-link btn btn-link py-0">
-                                        Logout @User.Identity.Name
-                                    </button>
-                                </form>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Admin">Create Post</a>
                             </li>
                         }
-                        else
+                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="CreateRole">Create Role</a>
                             </li>
                         }
-                    </ul>
+                        @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Administrator" asp-action="ListRoles">List Roles</a>
+                            </li>
+                        }
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <li class="nav-item">
+                                    <form method="post" asp-controller="Account" asp-action="logout">
+                                        <button type="submit" style="width:auto"
+                                                class="nav-link btn btn-link py-0">
+                                            Logout @User.Identity.Name
+                                        </button>
+                                    </form>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-controller="Account" asp-action="Login">Login</a>
+                                </li>
+                            }
+                        </ul>
                 </div>
             </div>
         </nav>

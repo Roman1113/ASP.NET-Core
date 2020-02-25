@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MyBlog.Models;
 using MyBlog.ViewModel;
+
 
 namespace MyBlog.Controllers
 {
@@ -14,14 +18,14 @@ namespace MyBlog.Controllers
         {
             private readonly UserManager<AppUser> userManager;
             private readonly SignInManager<AppUser> signInManager;
-
-            public AccountController(UserManager<AppUser> userManager,
-                SignInManager<AppUser> signInManager)
+            protected readonly IHostingEnvironment webHostEnvironment;
+        public AccountController(UserManager<AppUser> userManager,
+                SignInManager<AppUser> signInManager, IHostingEnvironment hostEnvironment)
             {
                 this.userManager = userManager;
                 this.signInManager = signInManager;
-
-            }
+                webHostEnvironment = hostEnvironment;
+        }
 
             [HttpGet]
         [AllowAnonymous]
@@ -32,17 +36,23 @@ namespace MyBlog.Controllers
 
             [HttpPost]
         [AllowAnonymous]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
             {
                 if (ModelState.IsValid)
                 {
-                    var user = new AppUser {
+                string uniqueFileName = UploadedFile(model);
+                var user = new AppUser {
                         UserName = model.Email,
                         Email = model.Email,
                         City = model.City,
                         Street = model.Street,
-                        Position = model.Position
-                    };
+                        Position = model.Position,
+                        ImageName = uniqueFileName
+                };
+
+                
+       
                     var result = await userManager.CreateAsync(user, model.Password);
                     if (result.Succeeded)
                     {
@@ -59,7 +69,24 @@ namespace MyBlog.Controllers
                 return View(model);
             }
 
-            [HttpPost]
+        private string UploadedFile(RegisterViewModel model)
+        {
+            string uniqueFileName = null;
+
+            if (model.ImageName != null)
+            {
+                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
+                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.ImageName.FileName;
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.ImageName.CopyTo(fileStream);
+                }
+            }
+            return uniqueFileName;
+        }
+
+        [HttpPost]
             public async Task<IActionResult> Logout()
             {
                 await signInManager.SignOutAsync();
@@ -101,6 +128,13 @@ namespace MyBlog.Controllers
             }
 
             return View(model);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
 
     }
