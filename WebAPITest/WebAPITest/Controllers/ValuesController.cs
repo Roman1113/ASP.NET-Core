@@ -5,35 +5,27 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using WebAPITest.Models;
+using WebAPITest.Entityes;
+
 
 namespace WebAPITest.Controllers
 {
     public class ValuesController : ApiController
     {
-        public class ApplicationDbContext : DbContext
-        {
-            public ApplicationDbContext()
-                : base("DefaultConnection")
-            {
-            }
-
-        public DbSet<EmployeeModel> Employees { get; set; }
-        }
-
+        
         ApplicationDbContext _dbContext = new ApplicationDbContext();
 
         //EmployeeModel employeeModel = new EmployeeModel();
 
         // GET api/values
-        public IEnumerable<EmployeeModel> Get()
+        public IEnumerable<Employees> Get()
         {
             var list = _dbContext.Employees.ToList();
             return list;
         }
 
         // GET api/values/5
-        public IEnumerable<EmployeeModel> Get(string Name)
+        public IEnumerable<Employees> Get(string Name)
         {
             var list = _dbContext.Employees.Where(e => e.FirstName.Contains(Name)).ToList();
             return list;
@@ -42,7 +34,7 @@ namespace WebAPITest.Controllers
         // POST api/values
         public void Post(string FirstName, string LastName, string Gender, int Salary)
         {
-            EmployeeModel new_emp = new EmployeeModel
+            Employees new_emp = new Employees
             {
                 FirstName = FirstName,
                 LastName = LastName,
